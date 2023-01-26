@@ -163,7 +163,7 @@ overflow: hidden;
   background: #F6F9FA;
   border-radius:  7px 7px 0 0;   // ??? 
   flex-direction: column;
-  padding: 18px 10px 18px 19px;
+  padding: 20px 10px 20px 19px;
   color:#2D2D2D;
   .name{
     font-style: normal;
@@ -185,8 +185,6 @@ color: #2D2D2D;
     line-height: 12px;
     letter-spacing: 0.272728px;
     color: #2D2D2D;
-    opacity: 0.5;
-
   }
   #untitled{
     font-style: normal;
