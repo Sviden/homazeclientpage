@@ -174,16 +174,13 @@ overflow: hidden;
   .id{
     margin-top: 4px;
     opacity: 0.5;
-    font-size: 12px;
     font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 12px;
-letter-spacing: 0.272728px;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: 0.272728px;
+    color: #2D2D2D;
 
-color: #2D2D2D;
-
-opacity: 0.5;
   }
   #untitled{
     font-style: normal;
@@ -248,7 +245,8 @@ opacity: 0.5;
     font-size: 12px;
     line-height: 12px;
     letter-spacing: 0.272728px;
-    color: #9F9F9F;
+    color: #2D2D2D;
+    opacity: 0.5;
     
   }
 
@@ -293,6 +291,7 @@ opacity: 0.5;
       font-weight: ${({stageFontWeight})=> stageFontWeight};
       font-size: 14px;
       line-height: 20px;
+      letter-spacing: 0.272728px;
       display: flex;
       justify-content: center;
       align-items: center;
