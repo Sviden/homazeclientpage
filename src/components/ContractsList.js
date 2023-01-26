@@ -30,7 +30,7 @@ width: 1160px;
   text-align:center;
   }
 h1 {
-  margin-top:0.5rem;
+  margin-top:0rem;
 margin-bottom: 0.5rem;
   font-style: normal;
 font-weight: 600;
