@@ -186,7 +186,14 @@ color: #2D2D2D;
 opacity: 0.5;
   }
   #untitled{
-    font-weight: 400;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 20px;
+    
+    letter-spacing: 0.272728px;
+    
+    color: #2D2D2D;
   }
 }
 
