@@ -31,16 +31,21 @@ letter-spacing: 0.436364px;
 color: #2D2D2D;
 text-aign: left;
 width: 1160px;
-padding-left:1rem;
 @media only screen and (max-width: 800px) {
   width: 50%;
   text-align:center;
   }
 
 h1 {
-  font-size:32px;
+
   margin-top:0.5rem;
-  margin-bottom:0.2rem
+margin-bottom: 0.5rem;
+  font-style: normal;
+font-weight: 600;
+font-size: 32px;
+line-height: 48px;
+letter-spacing: 0.436364px;
+color: #2D2D2D;
 }
 
 `
@@ -92,7 +97,6 @@ width: 289px;
 height: 46px;
 opacity: 0.3;
 border: 1px solid #2D2D2D;
-// border: 1px solid rgba(45,45,45, 0.3); to replace opacity?
 border-radius: 7px;
 font-style: normal;
 font-weight: 400;
@@ -102,9 +106,15 @@ color: black;
 padding: 15px;
 
  ::placeholder{
-    font-size: 14px;
-    letter-spacing: 0.272728px;
-    color: #2D2D2D;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  letter-spacing: 0.272728px;
+
+  color: #2D2D2D;
+
  }
 `
 
@@ -162,8 +172,18 @@ overflow: hidden;
     text-overflow: ellipsis;
   }
   .id{
+    margin-top: 4px;
     opacity: 0.5;
     font-size: 12px;
+    font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 12px;
+letter-spacing: 0.272728px;
+
+color: #2D2D2D;
+
+opacity: 0.5;
   }
   #untitled{
     font-weight: 400;
@@ -190,7 +210,13 @@ overflow: hidden;
   .room{
     color: #3CB2E4;
     margin-right:3px;
-    font-weight: 400;
+    font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.272728px;
+
+
   padding: 4px 10px 4px 10px;
   height: 28px;
 
@@ -250,12 +276,20 @@ overflow: hidden;
     margin-top: 5px;
     padding: 2px 10px;
     width: fit-content;
-    height: 28px;
+    height: 24px;
     left: 369px;
     top: 609px;
     color: ${({stageFontColor})=> stageFontColor};
     background:${({stageColorBackgr})=> stageColorBackgr};
     border-radius: 50px;
+    font-style: normal;
+      font-weight: ${({stageFontWeight})=> stageFontWeight};
+      font-size: 14px;
+      line-height: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
   }
 
   }
@@ -320,10 +354,11 @@ export function ContractsList(){
          <ContractsListWrapper>
 
           {filteredContractsArray && filteredContractsArray.map((contract,index)=> {
-           const stageBackColor = contract.projectState === "In progress" ? "#F6F9FA" : contract.projectState === 'Done' ? "#EBFCEC" : "#FAEEE8";
-           const stageFontColor = contract.projectState === "In progress" ? "#2D2D2D" : contract.projectState === 'Done' ? "#30D869" : "#E4783C";
+           const stageBackColor = contract.projectState === "In progress" ? "#F6F9FA" : contract.projectState === 'Done' ? "#EBFCEC" : contract.projectState === "Cancelled" ? "#EBF7FC" : "#FAEEE8";
+           const stageFontColor = contract.projectState === "In progress" ? "#2D2D2D" : contract.projectState === 'Done' ? "#30D869" : contract.projectState === "Cancelled" ? "#3CB2E4" : "#E4783C";
+           const stageFontWeight = contract.projectState === "Cancelled" ? 700 : 400;
             return(
-            <ProjectHolder  stageColorBackgr={stageBackColor} stageFontColor={stageFontColor} key={`projHolder${index}`}> 
+            <ProjectHolder stageFontWeight={stageFontWeight} stageColorBackgr={stageBackColor} stageFontColor={stageFontColor} key={`projHolder${index}`}> 
             <div className="nameAndIdWrapper" key={`nameid${index}`} >
               <span className="name">{contract.customerName ? contract.customerName : <span id="untitled" className="name">Untitled</span>}</span>
             <span className="id">{contract.projectId}</span> 
@@ -340,9 +375,9 @@ export function ContractsList(){
        
             </div>
             <div className="UpdateRenameStageInfoWrapper" key={`infowrapp${index}`}>
-              <div className="infoHolder"><span className="infoLabel">Last updated</span><span className="dateInfoData">{ moment.utc(contract.updated_timestmp).format("DD.MM.YYYY")  }</span></div>
-              <div className="infoHolder"><span className="infoLabel">total</span><span className="totalInfoData">${contract.totalProject.toLocaleString("en-US")}.00</span></div>
-              <div className="infoHolder"><span className="infoLabel" id="stageInfoLabel">Stage</span><span className="infoStage">{contract.projectState}</span></div>
+              <div className="infoHolder"><span className="infoLabel">Last updated</span><span className="dateInfoData">{ moment.utc(contract.updated_timestmp).format("MM.DD.YYYY")  }</span></div>
+              <div className="infoHolder"><span className="infoLabel">Total</span><span className="totalInfoData">${contract.totalProject.toLocaleString("en-US")}.00</span></div>
+              <div className="infoHolder"><span className="infoLabel" id="stageInfoLabel" >Stage</span><span className="infoStage">{contract.projectState}</span></div>
             </div> 
             </ProjectHolder>
             )
