@@ -166,7 +166,12 @@ overflow: hidden;
   padding: 18px 10px 18px 19px;
   color:#2D2D2D;
   .name{
-    font-weight: 600;
+    font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 20px;
+letter-spacing: 0.272728px;
+color: #2D2D2D;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -219,11 +224,8 @@ overflow: hidden;
   font-size: 12px;
   line-height: 20px;
   letter-spacing: 0.272728px;
-
-
   padding: 4px 10px 4px 10px;
   height: 28px;
-
   background: rgba(60, 178, 228, 0.1);
   border-radius: 6px;
   }
