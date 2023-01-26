@@ -23,21 +23,13 @@ width: 100%;
 const Header = styled.div`
 top: 11px;
 margin-top: 11px;
-font-style: normal;
-font-weight: 600;
-font-size: 32px;
-line-height: 48px;
-letter-spacing: 0.436364px;
-color: #2D2D2D;
 text-aign: left;
 width: 1160px;
 @media only screen and (max-width: 800px) {
   width: 50%;
   text-align:center;
   }
-
 h1 {
-
   margin-top:0.5rem;
 margin-bottom: 0.5rem;
   font-style: normal;
@@ -228,7 +220,7 @@ color: #2D2D2D;
   }
 }
 
- .UpdateRenameStageInfoWrapper{
+ .updateTotalStageInfoWrapper{
     display: flex;
     justify-content: space-around;
 
@@ -378,7 +370,7 @@ export function ContractsList(){
               )}
        
             </div>
-            <div className="UpdateRenameStageInfoWrapper" key={`infowrapp${index}`}>
+            <div className="updateTotalStageInfoWrapper" key={`infowrapp${index}`}>
               <div className="infoHolder"><span className="infoLabel">Last updated</span><span className="dateInfoData">{ moment.utc(contract.updated_timestmp).format("MM.DD.YYYY")  }</span></div>
               <div className="infoHolder"><span className="infoLabel">Total</span><span className="totalInfoData">${contract.totalProject.toLocaleString("en-US")}.00</span></div>
               <div className="infoHolder"><span className="infoLabel" id="stageInfoLabel" >Stage</span><span className="infoStage">{contract.projectState}</span></div>
