@@ -245,8 +245,7 @@ overflow: hidden;
     font-size: 12px;
     line-height: 12px;
     letter-spacing: 0.272728px;
-    color: #2D2D2D;
-    opacity: 0.5;
+    color: #9F9F9F;
     
   }
 
